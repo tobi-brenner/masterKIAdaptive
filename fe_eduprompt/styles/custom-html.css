@@ -1,0 +1,38 @@
+/* styles/custom-html.css */
+.custom-html h1 {
+    @apply text-2xl font-bold mb-2;
+}
+
+.custom-html h2 {
+    @apply text-xl font-semibold mb-2;
+}
+
+.custom-html h3 {
+    @apply text-lg font-medium mb-2;
+}
+
+.custom-html p {
+    @apply mb-4 text-base;
+}
+
+.custom-html ul {
+    @apply list-disc list-inside mb-4;
+}
+
+.custom-html ol {
+    @apply list-decimal list-inside mb-4;
+}
+
+.custom-html li {
+    @apply mb-2;
+}
+
+.custom-html strong {
+    @apply font-semibold;
+}
+
+.custom-html em {
+    @apply italic;
+}
+
+/* Add more styles as needed */
