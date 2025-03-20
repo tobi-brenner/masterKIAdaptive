@@ -1048,10 +1048,10 @@ public class TestInitResource {
         try {
             // Create Users
             User user1 = new User();
-            user1.email = "user1@gmail.com";
-            user1.firstName = "User";
-            user1.lastName = "User";
-            user1.password = "123456";
+            user1.email = "student@test.de";
+            user1.firstName = "Test";
+            user1.lastName = "Student";
+            user1.password = "test123";
             user1.studentNumber = "123456";
             user1.role = "student";
             user1.preferredLanguage = "deutsch";
@@ -1061,42 +1061,22 @@ public class TestInitResource {
             user2.email = "tobiasbrenner2@gmail.com";
             user2.firstName = "Tobi";
             user2.lastName = "Brenner";
-            user2.password = "admin123";
+            user2.password = "test123";
             user2.studentNumber = "12345";
             user2.role = "teacher";
             user2.preferredLanguage = "deutsch";
             user2.persist();
 
+
             User user3 = new User();
-            user3.email = "user3@gmail.com";
-            user3.firstName = "Prof";
-            user3.lastName = "Prof";
-            user3.password = "hashed_password_here";
+            user3.email = "teacher@test.de";
+            user3.firstName = "Test";
+            user3.lastName = "Teacher";
+            user3.password = "test123";
             user3.studentNumber = "123455";
             user3.role = "teacher";
             user3.preferredLanguage = "deutsch";
             user3.persist();
-
-
-            User user4 = new User();
-            user4.email = "user4@gmail.com";
-            user4.firstName = "Prof";
-            user4.lastName = "Prof";
-            user4.password = "hashed_password_here";
-            user4.studentNumber = "123455";
-            user4.role = "teacher";
-            user4.preferredLanguage = "deutsch";
-            user4.persist();
-
-            User user5 = new User();
-            user5.email = "user5@gmail.com";
-            user5.firstName = "Prof";
-            user5.lastName = "Prof";
-            user5.password = "hashed_password_here";
-            user5.studentNumber = "123455";
-            user5.role = "teacher";
-            user5.preferredLanguage = "deutsch";
-            user5.persist();
         } catch (Exception e) {
             LOG.error("Error initializing test data", e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity("Error initializing test data: " + e.getMessage()).build();
