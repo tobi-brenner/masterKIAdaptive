@@ -11,7 +11,12 @@ In der application.properties Datei muss der openAI API key hinzugefügt werden.
 quarkus.langchain4j.openai.api-key=sk-...
 ```
 
-Dann können die Images gebaut werden und container gestartet werden.
+Zusätzlich noch in dem fe_eduprompt Ordner eine `.env`-Datei erstellen und die folgende Zeile hinzufügen:
+```
+BE_URL=http://backend:8080
+```
+
+Dann können die Images gebaut werden und container gestartet werden. Hierzu in dem rootfolder des Projektes in dem auch die `docker-compose.yml` liegt folgenden Befehl ausführen.
 
 
 ```bash
@@ -125,9 +130,13 @@ POST localhost:8080/test-init/user
 Nachdem dieser request ausgeführt wurde, kann man sich beispielsweise mit dem User
 
 ```
-user: user3@gmail.com
-password: password
+teacher@test.de
+test123
+
+student@test.de
+test123
 ```
+
 einloggen.
 
 ### Port
