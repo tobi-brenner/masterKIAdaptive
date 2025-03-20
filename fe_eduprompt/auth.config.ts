@@ -15,6 +15,7 @@ export const authConfig = {
   pages: {
     signIn: '/login',
   },
+  trustHost: true,
   providers: [
     // added later in session.ts since it requires bcrypt which is only compatible with Node.js
     // while this file is also used in non-Node.js environments
@@ -35,7 +36,7 @@ export const authConfig = {
       console.log("USER JWT ", user);
       if (user) {
         token.uid = user.id;
-        token.role = user.role;
+        token.role = user.role || "student";
       }
       return token;
     },
