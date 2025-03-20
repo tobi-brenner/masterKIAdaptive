@@ -20,6 +20,8 @@ import java.util.List;
 public class TextToSpeech {
     private final Logger logger = LoggerFactory.getLogger(TextToSpeech.class);
 
+    private final HttpClient client = HttpClient.newHttpClient();
+
     private static final String TTS_URL = "https://api.openai.com/v1/audio/speech";
     //    private static final String OPENAI_API_KEY = System.getenv("OPENAI_API_KEY");
     private static final String OPENAI_API_KEY = "";
@@ -43,7 +45,7 @@ public class TextToSpeech {
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(postBody))
                 .build();
-        try (HttpClient client = HttpClient.newHttpClient()) {
+        try {
             HttpResponse<byte[]> response =
                     client.send(request, HttpResponse.BodyHandlers.ofByteArray());
             byte[] body = response.body();
